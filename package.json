@@ -1,0 +1,40 @@
+{
+  "name": "rails-songbook-nightwatch",
+  "version": "1.0.0",
+  "description": "Nightwatch.js test project for the rails-songbook application",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch --env default",
+    
+    "dev-chrome-smoke": "nightwatch -e dev_chrome $(cat test_suites/smoke/smoke_tests.txt)",
+    "dev-chrome-regression": "nightwatch -e dev_chrome $(cat test_suites/regression/regression_tests.txt)",
+    
+    "dev-chrome-homepage": "nightwatch -e dev_chrome -t tests/homepage/Homepage-Launch.js",
+    "dev-chrome-homepage-artist": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByArtist.js",
+    "dev-chrome-homepage-song": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseBySong.js",
+
+    "prod-chrome-smoke": "nightwatch -e prod_chrome $(cat test_suites/smoke/smoke_tests.txt)",
+    "prod-chrome-regression": "nightwatch -e prod_chrome $(cat test_suites/regression/regression_tests.txt)",
+    
+    "prod-chrome-homepage": "nightwatch -e prod_chrome -t tests/homepage/Homepage-Launch.js",
+    "prod-chrome-homepage-artist": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByArtist.js",
+    "prod-chrome-homepage-song": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseBySong.js"
+
+  },
+  "keywords": ["nightwatch"],
+  "author": "wclaytor",
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^110.0.0",
+    "dotenv": "^16.0.1",
+    "geckodriver": "^3.0.2",
+    "key-file-storage": "^2.2.10",
+    "nightwatch": "^2.3.0",
+    "selenium-server": "^3.141.59"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
