@@ -9,14 +9,14 @@
     "dev-chrome-smoke": "nightwatch -e dev_chrome $(cat test_suites/smoke/smoke_tests.txt)",
     "dev-chrome-regression": "nightwatch -e dev_chrome $(cat test_suites/regression/regression_tests.txt)",
     
-    "dev-chrome-homepage": "nightwatch -e dev_chrome -t tests/homepage/Homepage-Launch.js",
+    "dev-chrome-homepage": "nightwatch -e dev_chrome -t tests/homepage/Homepage.js",
     "dev-chrome-homepage-author": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByAuthor.js",
     "dev-chrome-homepage-book": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByBook.js",
 
     "prod-chrome-smoke": "nightwatch -e prod_chrome $(cat test_suites/smoke/smoke_tests.txt)",
     "prod-chrome-regression": "nightwatch -e prod_chrome $(cat test_suites/regression/regression_tests.txt)",
     
-    "prod-chrome-homepage": "nightwatch -e prod_chrome -t tests/homepage/Homepage-Launch.js",
+    "prod-chrome-homepage": "nightwatch -e prod_chrome -t tests/homepage/Homepage.js",
     "prod-chrome-homepage-Author": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByAuthor.js",
     "prod-chrome-homepage-book": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByBook.js"
 
