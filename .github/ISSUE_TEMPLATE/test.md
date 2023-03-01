@@ -1,7 +1,7 @@
 ---
 name: Test
 about: Suggest a new test for this project
-title: ''
+title: "[Test] "
 labels: ''
 assignees: ''
 
