@@ -18,6 +18,7 @@ module.exports = {
   // See https://nightwatchjs.org/guide/working-with-page-objects/
   page_objects_path: [
     "./page_objects",
+    "./page_objects/homepage",
   ],
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
@@ -321,7 +322,7 @@ module.exports = {
     // PRODUCTION
     prod_chrome: {
       globals: {
-        homepageUrl: 'https://demo.billclaytor.com/',
+        homepageUrl: 'http://demo.billclaytor.com/',
         userEmail: process.env.PROD_USER_EMAIL,
         userPassword: process.env.PROD_USER_PASSWORD
       },
@@ -352,7 +353,7 @@ module.exports = {
 
     prod_firefox: {
       globals: {
-        homepageUrl: 'https://demo.billclaytor.com/',
+        homepageUrl: 'http://demo.billclaytor.com/',
         userEmail: process.env.PROD_USER_EMAIL,
         userPassword: process.env.PROD_USER_PASSWORD
       },
@@ -382,7 +383,7 @@ module.exports = {
 
     prod_safari: {
       globals: {
-        homepageUrl: 'https://demo.billclaytor.com/',
+        homepageUrl: 'http://demo.billclaytor.com/',
         userEmail: process.env.PROD_USER_EMAIL,
         userPassword: process.env.PROD_USER_PASSWORD
       },
