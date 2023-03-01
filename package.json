@@ -1,7 +1,7 @@
 {
-  "name": "rails-songbook-nightwatch",
+  "name": "bpc-rails-demo-nightwatch",
   "version": "1.0.0",
-  "description": "Nightwatch.js test project for the rails-songbook application",
+  "description": "Nightwatch.js test project for the bpc-rails-demo site",
   "main": "index.js",
   "scripts": {
     "test": "nightwatch --env default",
@@ -10,15 +10,15 @@
     "dev-chrome-regression": "nightwatch -e dev_chrome $(cat test_suites/regression/regression_tests.txt)",
     
     "dev-chrome-homepage": "nightwatch -e dev_chrome -t tests/homepage/Homepage-Launch.js",
-    "dev-chrome-homepage-artist": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByArtist.js",
-    "dev-chrome-homepage-song": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseBySong.js",
+    "dev-chrome-homepage-author": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByAuthor.js",
+    "dev-chrome-homepage-book": "nightwatch -e dev_chrome -t tests/homepage/Homepage-BrowseByBook.js",
 
     "prod-chrome-smoke": "nightwatch -e prod_chrome $(cat test_suites/smoke/smoke_tests.txt)",
     "prod-chrome-regression": "nightwatch -e prod_chrome $(cat test_suites/regression/regression_tests.txt)",
     
     "prod-chrome-homepage": "nightwatch -e prod_chrome -t tests/homepage/Homepage-Launch.js",
-    "prod-chrome-homepage-artist": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByArtist.js",
-    "prod-chrome-homepage-song": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseBySong.js"
+    "prod-chrome-homepage-Author": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByAuthor.js",
+    "prod-chrome-homepage-book": "nightwatch -e prod_chrome -t tests/homepage/Homepage-BrowseByBook.js"
 
   },
   "keywords": ["nightwatch"],
