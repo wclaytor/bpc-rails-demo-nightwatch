@@ -3,9 +3,10 @@ module.exports = {
 
     verifyPageElements() {
       return this
-        .waitForElementVisible('@textHeading')
+        .waitForElementVisible('@navbar')
+        .assert.title("Developer Bookshelf")
         .verifyNavbarElements()
-        .verifyHeaderElements()
+        .verifyJumbotronElements()
         .verifyContentElements()
         .verifyFooterElements();
     },
@@ -14,30 +15,40 @@ module.exports = {
       return this
         .waitForElementVisible('@navbar')
         .assert.visible('@navbarBrand')
+        .assert.textEquals('@navbarBrand', "Developer Bookshelf")
         .assert.visible('@navbarLinkAuthors')
-        .assert.visible('@navbarLinkBooks');
+        .assert.textEquals('@navbarLinkAuthors', "Authors")
+        .assert.visible('@navbarLinkBooks')
+        .assert.textEquals('@navbarLinkBooks', "Books");
     },
 
-    verifyHeaderElements() {
+    verifyJumbotronElements() {
       return this
-        .waitForElementVisible('@header')
-        .assert.visible('@textHeading')
-        .assert.visible('@textSubHeading');
+        .waitForElementVisible('@jumbotron')
+        .assert.visible('@textJumbotronHeading')
+        .assert.textEquals('@textJumbotronHeading', "Developer Bookshelf")
+        .assert.visible('@textJumbotronSubHeading')
+        .assert.textEquals('@textJumbotronSubHeading', "A Ruby on Rails demo");
     },
 
     verifyContentElements() {
       return this
         .waitForElementVisible('@content')
         .assert.visible('@linkBrowseByBook')
+        .assert.textEquals('@linkBrowseByBook', "book title")
         .assert.visible('@linkBrowseByAuthor')
+        .assert.textEquals('@linkBrowseByAuthor', "author name")
         .assert.visible('@linkGithub')
-        .assert.visible('@linkKanbanBoard');
+        .assert.textEquals('@linkGithub', "Github")
+        .assert.visible('@linkKanbanBoard')
+        .assert.textEquals('@linkKanbanBoard', "Kanban board");
     },
 
     verifyFooterElements() {
       return this
         .waitForElementVisible('@footer')
-        .assert.visible('@linkPhotoCredit');
+        .assert.visible('@linkPhotoCredit')
+        .assert.textEquals('@linkPhotoCredit', "Photo by Engin Akyurt");
     },
 
     browseByAuthor() {
@@ -65,87 +76,71 @@ module.exports = {
 
     // navbar
     navbar: {
-      selector: "//nav[@id='main-navbar']",
-      locateStrategy: 'xpath',
+      selector: "nav[id='navbar']",
     },
 
     navbarBrand: {
-      selector: "//span[@class='navbar-brand'][text()='Developer Bookshelf']",
-      locateStrategy: 'xpath',
+      selector: "span[id='navbarBrand']",
     },
 
     navbarLinkHome: {
-      selector: "//a[@class='nav-link'][text()='Home']",
-      locateStrategy: 'xpath',
+      selector: "a[id='navbarLinkHome']",
     },
 
     navbarLinkAuthors: {
-      selector: "//a[@class='nav-link'][text()='Authors']",
-      locateStrategy: 'xpath',
+      selector: "a[id='navbarLinkAuthors']",
     },
 
     navbarLinkBooks: {
-      selector: "//a[@class='nav-link'][text()='Books']",
-      locateStrategy: 'xpath',
+      selector: "a[id='navbarLinkBooks']",
     },
 
-    // header
-    header: {
-      selector: "//div[@id='header']",
-      locateStrategy: 'xpath',
+    // jumbotron
+    jumbotron: {
+      selector: "div[id='jumbotron']",
     },
 
-    textHeading: {
-      selector: "//h1[text()='Developer Bookshelf']",
-      locateStrategy: 'xpath',
+    textJumbotronHeading: {
+      selector: "h1[id='textJumbotronHeading']",
     },
 
-    textSubHeading: {
-      selector: "//h3[text()='A Ruby on Rails demo']",
-      locateStrategy: 'xpath',
+    textJumbotronSubHeading: {
+      selector: "h3[id='textJumbotronSubHeading']",
     },
 
     // TODO: jumbotron background image
     imgBackground: {
       selector: "//img[@src='...']",
-      locateStrategy: 'xpath',
     },
 
     // content
     content: {
-      selector: "//div[@id='content']",
-      locateStrategy: 'xpath',
+      selector: "div[id='content']",
     },
 
     linkBrowseByAuthor: {
-      selector: "//a[text()='author name']",
-      locateStrategy: 'xpath',
+      selector: "a[id='browseAuthors']",
     },
 
     linkBrowseByBook: {
-      selector: "//a[text()='book title']",
-      locateStrategy: 'xpath',
+      selector: "a[id='browseBooks']",
     },
 
     linkGithub: {
-      selector: "//a[text()='Github']",
-      locateStrategy: 'xpath',
+      selector: "a[id='github']",
     },
 
     linkKanbanBoard: {
-      selector: "//a[text()='Kanban board']",
-      locateStrategy: 'xpath',
+      selector: "a[id='kanban']",
     },
 
     // footer
     footer: {
-      selector: "//div[@id='footer']",
-      locateStrategy: 'xpath',
+      selector: "div[id='footer']",
     },
     
     linkPhotoCredit: {
-      selector: "//a[text()='Photo by Engin Akyurt']",
-      locateStrategy: 'xpath',
+      selector: "a[id='photoCredit']",
     },
 
   },
